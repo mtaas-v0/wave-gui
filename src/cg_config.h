@@ -12,7 +12,7 @@
         #define M_PI 3.14159265359
     #endif
 
-    #define round(d) (floor((d) + 0.5))
+//    #define round(d) (floor((d) + 0.5))
 
     #define CGSleep Sleep
 #else
