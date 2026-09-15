@@ -50,7 +50,8 @@ jobs:
       run: | 
         cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}  "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" `
         -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake" `
-        -DPKG_CONFIG_EXECUTABLE="$env:VCPKG_INSTALLATION_ROOT/installed/x64-windows/tools/pkgconf/pkgconf.exe"
+        -DPKG_CONFIG_EXECUTABLE="$env:VCPKG_INSTALLATION_ROOT/installed/x64-windows/tools/pkgconf/pkgconf.exe" `
+        -DCMAKE_CXX_FLAGS="/wd4005"
 
     - name: Build
       # Build your program with the given configuration
