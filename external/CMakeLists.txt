@@ -1,4 +1,8 @@
+
+cmake_policy(SET CMP0079 NEW)
+
 add_subdirectory(imgui)
+
 
 # 3. Explicitly link the vcpkg glfw target to the imgui target
 if(TARGET imgui)
