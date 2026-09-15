@@ -33,11 +33,15 @@ jobs:
     - uses: actions/checkout@v4
       with:
         submodules: recursive
+
+
+    - name: Run Choco
+      run: choco install pkgconfig sdl2 glfw3 --no-progress
         
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}  -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}  "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
 
     - name: Build
       # Build your program with the given configuration
