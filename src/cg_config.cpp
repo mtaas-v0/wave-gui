@@ -8,6 +8,9 @@
 #include <cstdio>
 #include <cstdarg> // Required for va macros
 
+
+namespace CG {
+
 class CG_EXPORT Exception : public std::exception {
 public:
     /*! \brief The Constructor. */
@@ -21,3 +24,4 @@ public:
     ~Exception() throw() {}
 }
 
+} //namespace CG 
