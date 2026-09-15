@@ -11,6 +11,12 @@ if(NOT MSVC)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -W -Wall -Wno-long-long -pedantic")
 endif()
 
+if(WIN32)
+    # This forces BOTH the compiler and IDEs to recognize the definition
+    add_compile_definitions(_WIN32)
+endif()
+
+
 #
 ## Dependencies
 find_package(Threads REQUIRED)
