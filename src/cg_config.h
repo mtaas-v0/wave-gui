@@ -5,7 +5,7 @@
 
 #pragma once
 
-#ifdef WIN32
+#ifdef WIN32 || _WIN32
     #include <windows.h>
 
     #ifndef M_PI
