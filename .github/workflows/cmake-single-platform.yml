@@ -36,7 +36,13 @@ jobs:
 
 
     - name: Run Choco
+      if: false
+      # pkgconfig ! pkgconfiglite 
+      # sdl2 !
       run: choco install pkgconfig sdl2 glfw3 --no-progress
+
+    - name: Install dependencies via vcpkg
+      run: vcpkg install pkgconf sdl2 glfw3 --triplet x64-windows
         
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
