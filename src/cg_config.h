@@ -5,7 +5,7 @@
 
 #pragma once
 
-#ifdef WIN32 || _WIN32
+#if defined(_WIN32) || defined(__WIN32__) || defined(WIN32)
     #include <windows.h>
 
     #ifndef M_PI
