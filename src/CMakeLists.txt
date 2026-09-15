@@ -11,5 +11,6 @@ add_library(${CG_CORE_LIB}
 
 target_link_libraries(${CG_CORE_LIB}
     ${GLFW_STATIC_LIBRARIES}
+    glfw
     ${CMAKE_THREAD_LIBS_INIT}
     )
