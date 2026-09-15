@@ -51,7 +51,7 @@ jobs:
         $path = "external/imgui/CMakeLists.txt"
         if (Test-Path $path) {
           # Replace 'glfw3' with 'glfw' as required by vcpkg's target mapping
-          (Get-Content $path) -replace 'set(GLFW_DEPS glfw3)', 'set(GLFW_DEPS glfw)' | Set-Content $path
+          (Get-Content $path) -replace 'set\(GLFW_DEPS glfw3\)', 'set(GLFW_DEPS glfw)' | Set-Content $path
           Write-Host "Successfully patched $path"
         } else {
           Write-Error "Could not find $path"
