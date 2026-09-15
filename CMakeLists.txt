@@ -14,7 +14,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -W -Wall -Wno-long-long -peda
 find_package(Threads REQUIRED)
 find_package(PkgConfig REQUIRED)
 find_package(SDL2 REQUIRED)
-pkg_search_module(GLFW REQUIRED glfw3)
+
+# Replace the pkg_search_module(glfw3 REQUIRED glfw3) block with this:
+find_package(glfw3 CONFIG REQUIRED)
+
 include_directories(SYSTEM ${GLFW_INCLUDE_DIRS})
 
 find_package(FFTW)
