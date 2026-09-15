@@ -86,6 +86,11 @@ typedef unsigned int   CG_UI32;
 #include <cstddef>
 #include <exception>
 
+
+#ifndef CG_EXCEPTION_H
+#define CG_EXCEPTION_H
+
+
 namespace CG {
 /*! \brief An Exception class.
  *
@@ -103,3 +108,5 @@ public:
     char _info[1024]; //!< Information about the Exception
 };
 }
+
+#endif
