@@ -24,8 +24,8 @@ function(cg_add_program PROGRAM_NAME)
         winmm          # Handles Windows multimedia timers
         imm32          # Handles Input Method Editors (for keyboards/languages)
         version        # Handles Windows file/product versioning
-        opengl32       # undefined reference to `__imp_glClearColor'
         glu32          # __imp_glMatrixMode
+        opengl32       # undefined reference to `__imp_glClearColor'
         )
     install(TARGETS ${PROGRAM_TARGET} DESTINATION ${PROJECT_SOURCE_DIR}/bin)
 endfunction()
