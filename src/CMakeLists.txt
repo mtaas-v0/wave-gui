@@ -1,5 +1,4 @@
 add_library(${CG_CORE_LIB}
-    SHARED
     cg_config.cpp
     cg_logger.cpp
     cg_glfw3.cpp
