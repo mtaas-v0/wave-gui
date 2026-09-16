@@ -14,8 +14,9 @@ endif()
 
 if(MINGW)
     # Forces GCC to link the C, C++, and thread runtimes statically
-    if(not BUILD_SHARED_LIBS)
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libgcc -static-libstdc++ -Wl,-Bstatic,--whole-archive -lwinpthread -Wl,-Bdynamic,--no-whole-archive")
+    if(NOT BUILD_SHARED_LIBS)
+        message(STATUS "🔒 Building project as STATIC libraries.")
+        set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libgcc -static-libstdc++ -Wl,-Bstatic,--whole-archive -lwinpthread -Wl,-Bdynamic,--no-whole-archive")
     endif()
 endif()
 
