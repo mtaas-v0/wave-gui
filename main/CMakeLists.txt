@@ -12,6 +12,9 @@ function(cg_add_program PROGRAM_NAME)
     endforeach()
 
     add_executable(${PROGRAM_TARGET} ${${PROGRAM_NAME}_SOURCE_LIST})
+    
+    target_compile_definitions(${PROGRAM_TARGET} PRIVATE SDL_MAIN_HANDLED)
+
     target_link_libraries(${PROGRAM_TARGET}
         ${CG_ADDITIONAL_LIBRARIES}
         ${CG_CORE_LIB}
