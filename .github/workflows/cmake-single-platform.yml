@@ -98,7 +98,21 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}}
 
-
+    - name: Copy Matching MinGW Runtime DLLs
+      run: |
+        $mingwBin = (Get-Command g++).Source | Split-Path
+        
+        # Ensure we grab the exact matching winpthread DLL from the toolchain
+        $dlls = @("libwinpthread-1.dll", "libgcc_s_seh-1.dll", "libstdc++-6.dll")
+        
+        # Adjust target destination to wherever your compiled app artifact lives
+        # E.g., "${{ github.workspace }}/build/bin" or "${{ github.workspace }}/build/"
+        $destination = "${{ github.workspace }}/build/"
+        
+        foreach ($dll in $dlls) {
+            Copy-Item (Join-Path $mingwBin $dll) -Destination $destination -Force
+        }
+        
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v4
       with:
