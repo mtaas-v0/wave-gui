@@ -6,6 +6,9 @@
 #ifndef __CG_LOGGER_H__
 #define __CG_LOGGER_H__
 
+#include "cg_config.h"
+
+
 #include <memory>
 #include <string>
 
@@ -44,7 +47,7 @@ constexpr int kLoggerDefaultDebugVebosity = 10;
 #define CG_WARN(V, ...)        if (V <= CG_LOGGING) CG::Logger::getInstance().logMessage(CG::Logger::WARNING, __FILE__, __LINE__, -1, __FUNCTION__, __VA_ARGS__)
 #define CG_WARND(V, ...)       if (V <= CG_LOGGING) CG::Logger::getInstance().logMessage(CG::Logger::WARNING, __FILE__, __LINE__, -1, __PRETTY_FUNCTION__, __VA_ARGS__)
 
-class Logger {
+class CG_EXPORT Logger {
 public:
     enum TypeMessage {
         INFO = 0,
