@@ -36,11 +36,11 @@ private:
 
 namespace CG {
 
-Timer::Timer() { m_timer = new TimerImplementation; m_timer->start(); }
+CG_EXPORT  Timer::Timer() { m_timer = new TimerImplementation; m_timer->start(); }
 
-Timer::~Timer() { delete m_timer; }
+CG_EXPORT  Timer::~Timer() { delete m_timer; }
 
-void Timer::start() { m_timer->start(); }
+CG_EXPORT  void Timer::start() { m_timer->start(); }
 
-float Timer::time() { return m_timer->time(); }
+CG_EXPORT  float Timer::time() { return m_timer->time(); }
 }
