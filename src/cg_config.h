@@ -31,6 +31,13 @@
 //
 // DLL stuff
 //
+
+#ifdef MAKE_DLL
+    #define CG_EXPORT __declspec(dllexport)
+#else
+    #define CG_EXPORT __declspec(dllimport)
+#endif
+
 #ifdef WIN32
 
     #ifdef _MSC_VER
@@ -39,11 +46,6 @@
         #endif
     #endif
 
-    #ifdef MAKE_DLL
-        #define CG_EXPORT __declspec(dllexport)
-    #else
-        #define CG_EXPORT __declspec(dllimport)
-    #endif
 
 #else
 
