@@ -11,7 +11,7 @@
 #endif
 
 #include <mutex>
-#ifdef __MINGW32__ && 0
+#ifdef __MINGW32__
 //    #include "mingw.mutex.h"
 //    #include "mingw.condition_variable.h"
 #endif
