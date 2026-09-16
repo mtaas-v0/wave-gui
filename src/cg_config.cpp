@@ -8,7 +8,7 @@
 #include <cstdio>
 #include <cstdarg>
 
-CG::Exception::Exception(const char *info, ...) {
+CG_EXPORT  CG::Exception::Exception(const char *info, ...) {
     //_info = new char [1024];
     va_list ap;
     va_start(ap, info);
@@ -16,4 +16,4 @@ CG::Exception::Exception(const char *info, ...) {
     va_end(ap);
 }
 
-CG::Exception::~Exception() throw() {}
+CG_EXPORT  CG::Exception::~Exception() throw() {}
