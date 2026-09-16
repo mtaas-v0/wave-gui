@@ -53,7 +53,7 @@
 
 #endif
 
-#define CG_EXPORT 
+//#define CG_EXPORT 
 //Debug check CG_EXPORT for STATIC
 
 // 1. Helper macros to force expansion and convert to a string
