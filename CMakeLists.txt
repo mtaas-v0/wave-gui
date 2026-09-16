@@ -44,10 +44,18 @@ else (CG_LOGGING)
     add_definitions(-DCG_LOGGING=10)
 endif (CG_LOGGING)
 
+#mingw adjust
+include_directories(SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/external/mingw-std-threads)
+
+
+
 option(CG_OUTPUT "Use cg-output" ON)
 if (CG_OUTPUT)
     add_definitions(-DCG_OUTPUT -DCOLOR_OUTPUT)
 endif()
+
+
+
 
 add_definitions(-DCG_COLOR_OUTPUT) # Colored log messages
 
