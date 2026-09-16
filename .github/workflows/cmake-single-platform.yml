@@ -80,7 +80,7 @@ jobs:
           -G "MinGW Makefiles" `
           -DCMAKE_CXX_COMPILER=g++ `
           -DCMAKE_C_COMPILER=gcc `
-           -DVCPKG_TARGET_TRIPLET=x64-mingw-static `
+           -DVCPKG_TARGET_TRIPLET=x64-mingw-static -DBUILD_SHARED_LIBS=ON `
         -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake" `
         -DPKG_CONFIG_EXECUTABLE="$env:VCPKG_INSTALLATION_ROOT/installed/x64-mingw-static/tools/pkgconf/pkgconf.exe" `
         -DCMAKE_COMPILE_WARNING_AS_ERROR=OFF
