@@ -5,11 +5,13 @@
 
 #pragma once
 
+#include "cg_config.h"
+
 struct GLFWwindow;
 
 namespace CG {
 
-class Window {
+class CG_EXPORT Window {
 public:
     Window();
     virtual ~Window();
