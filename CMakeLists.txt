@@ -9,7 +9,22 @@ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 if(NOT MSVC)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -W -Wall -Wno-long-long -pedantic")
+
 endif()
+
+if(MINGW)
+    # Forces GCC to link the C, C++, and thread runtimes statically
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libgcc -static-libstdc++ -Wl,-Bstatic,--whole-archive -lwinpthread -Wl,-Bdynamic,--no-whole-archive")
+endif()
+
+if(MINGW)
+    message(STATUS "🟢 SUCCESS: CMake detected MINGW toolchain!")
+    message(STATUS "   Compiler: ${CMAKE_CXX_COMPILER_ID} version ${CMAKE_CXX_COMPILER_VERSION}")
+else()
+    message(WARNING "🔴 FAILURE: MINGW was NOT detected by CMake.")
+    message(STATUS "   Active Toolchain ID: ${CMAKE_CXX_COMPILER_ID}")
+endif()
+
 
 if(WIN32)
     # This forces BOTH the compiler and IDEs to recognize the definition
