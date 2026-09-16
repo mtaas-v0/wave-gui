@@ -47,7 +47,7 @@ jobs:
       run: choco install pkgconfig sdl2 glfw3 --no-progress
 
     - name: Install dependencies via vcpkg
-      run: vcpkg install pkgconf sdl2 glfw3  fftw3 --triplet=x64-mingw-static 
+      run: vcpkg install pkgconf sdl2 glfw3  fftw3  mingw-std-threads --triplet=x64-mingw-static 
       # --triplet x64-windows
       
     - name: Patch ImGui CMakeLists.txt for vcpkg GLFW
