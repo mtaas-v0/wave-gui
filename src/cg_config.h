@@ -5,12 +5,13 @@
 
 #pragma once
 
+#ifndef M_PI
+    #define M_PI 3.14159265359
+#endif
+
 #if defined(_WIN32) || defined(__WIN32__) || defined(WIN32)
     #include <windows.h>
 
-    #ifndef M_PI
-        #define M_PI 3.14159265359
-    #endif
 
 //    #define round(d) (floor((d) + 0.5))
 
