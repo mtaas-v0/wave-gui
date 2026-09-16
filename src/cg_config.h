@@ -32,11 +32,6 @@
 // DLL stuff
 //
 
-#ifdef MAKE_DLL
-    #define CG_EXPORT __declspec(dllexport)
-#else
-    #define CG_EXPORT __declspec(dllimport)
-#endif
 
 #ifdef WIN32
 
@@ -45,13 +40,29 @@
             #define for if (0); else for
         #endif
     #endif
-
+    
+    #ifdef MAKE_DLL
+        #define CG_EXPORT __declspec(dllexport)
+    #else
+        #define CG_EXPORT __declspec(dllimport)
+    #endif
 
 #else
 
     #define CG_EXPORT
 
 #endif
+
+#define CG_EXPORT 
+//Debug check CG_EXPORT for STATIC
+
+// 1. Helper macros to force expansion and convert to a string
+#define STRINGIFY_HELPER(x) #x
+#define STRINGIFY(x) STRINGIFY_HELPER(x)
+// 3. Print the expansion to the build console output
+#pragma message("MAKE_DLL expands to: " STRINGIFY(MAKE_DLL))
+#pragma message("CG_EXPORT expands to: " STRINGIFY(CG_EXPORT))
+#pragma message("WIN32 expands to: " STRINGIFY(WIN32))
 
 /*! \brief Standard floating point number.
  *
