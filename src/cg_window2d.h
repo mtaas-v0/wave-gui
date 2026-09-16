@@ -10,7 +10,7 @@
 #include <map>
 
 namespace CG {
-class Window2D : public Window {
+class CG_EXPORT  Window2D : public Window {
 public:
     Window2D();
     ~Window2D();
