@@ -56,7 +56,7 @@ jobs:
       run: choco install pkgconfig sdl2 glfw3 --no-progress
 
     - name: Install dependencies via vcpkg
-      run: vcpkg install pkgconf sdl2 glfw3  fftw3 --triplet=x64-mingw-static 
+      run: vcpkg install pkgconf sdl2 glfw3  fftw3 --triplet=x64-mingw 
       # --triplet x64-windows
       
     - name: Patch ImGui CMakeLists.txt for vcpkg GLFW
@@ -80,7 +80,7 @@ jobs:
           -G "MinGW Makefiles" `
           -DCMAKE_CXX_COMPILER=g++ `
           -DCMAKE_C_COMPILER=gcc `
-           -DVCPKG_TARGET_TRIPLET=x64-mingw-static -DBUILD_SHARED_LIBS=ON `
+           -DVCPKG_TARGET_TRIPLET=x64-mingw -DBUILD_SHARED_LIBS=ON `
         -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake" `
         -DPKG_CONFIG_EXECUTABLE="$env:VCPKG_INSTALLATION_ROOT/installed/x64-mingw-static/tools/pkgconf/pkgconf.exe" `
         -DCMAKE_COMPILE_WARNING_AS_ERROR=OFF
