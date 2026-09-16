@@ -7,13 +7,13 @@
 
 #ifdef __MINGW32__
     #include <cstdio>
-    #include "mingw.thread.h"
+//    #include "mingw.thread.h"
 #endif
 
 #include <mutex>
-#ifdef __MINGW32__
-    #include "mingw.mutex.h"
-    #include "mingw.condition_variable.h"
+#ifdef __MINGW32__ && 0
+//    #include "mingw.mutex.h"
+//    #include "mingw.condition_variable.h"
 #endif
 
 #include <map>
