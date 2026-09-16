@@ -19,6 +19,11 @@ function(cg_add_program PROGRAM_NAME)
         ${CG_ADDITIONAL_LIBRARIES}
         ${CG_CORE_LIB}
         ${CG_IMGUI_LIB}
+
+        setupapi
+        winmm          # Handles Windows multimedia timers
+        imm32          # Handles Input Method Editors (for keyboards/languages)
+        version        # Handles Windows file/product versioning
         )
     install(TARGETS ${PROGRAM_TARGET} DESTINATION ${PROJECT_SOURCE_DIR}/bin)
 endfunction()
