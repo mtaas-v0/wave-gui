@@ -33,7 +33,7 @@
 //
 
 
-#ifdef WIN32
+#if defined(_WIN32) || defined(__WIN32__) || defined(WIN32)
 
     #ifdef _MSC_VER
         #if _MSC_VER < 1201
