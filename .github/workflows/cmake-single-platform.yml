@@ -73,7 +73,7 @@ jobs:
           -DCMAKE_C_COMPILER=gcc `
            -DVCPKG_TARGET_TRIPLET=x64-mingw-static `
         -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake" `
-        -DPKG_CONFIG_EXECUTABLE="$env:VCPKG_INSTALLATION_ROOT/installed/x64-windows/tools/pkgconf/pkgconf.exe" `
+        -DPKG_CONFIG_EXECUTABLE="$env:VCPKG_INSTALLATION_ROOT/installed/x64-mingw-static/tools/pkgconf/pkgconf.exe" `
         -DCMAKE_COMPILE_WARNING_AS_ERROR=OFF
 #        -DCMAKE_CXX_FLAGS="/wd4005"  -DCMAKE_CXX_FLAGS="/W3"  
 #          -DVCPKG_TARGET_TRIPLET=x64-windows-static-md <= msvc use this?
