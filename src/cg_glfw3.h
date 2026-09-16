@@ -5,11 +5,12 @@
 
 #pragma once
 
+#include "cg_config.h"
 #include <memory>
 
 namespace CG {
 
-class GLFW3 {
+class CG_EXPORT  GLFW3 {
 public:
     static GLFW3 & getInstance() {
         static GLFW3 instance;
